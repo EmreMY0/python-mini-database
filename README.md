@@ -3,40 +3,38 @@ Mini SQL python
 
 
 
+Sure! Here are the English versions for both projects, written in a clean, human-like style suitable for GitHub.
+
 ---
 
-# Simple SQL-Like Table Manager
+### **Simple SQL-Like Table Manager**
 
-Bu proje, Python kullanarak temel SQL komutlarını (CREATE, INSERT, SELECT, UPDATE, DELETE, JOIN, COUNT) taklit eden, dosya tabanlı bir tablo yönetim sistemidir. Bir giriş dosyasındaki komutları okur ve sonuçları formatlı bir şekilde ekrana basar.
+This project is a file-based table management system written in Python that mimics basic SQL commands (CREATE, INSERT, SELECT, UPDATE, DELETE, JOIN, COUNT). It processes commands from an input file and displays the results in a formatted, easy-to-read table structure.
 
-## Özellikler
+#### **Features**
+* **Dynamic Table Creation:** Define new tables with custom column names.
+* **Data Operations:** Full support for inserting, updating, and deleting rows.
+* **Conditional Queries:** Filter and count data based on specific criteria.
+* **Table Joining:** Perform joins between two tables using a common column.
+* **Visual Output:** Automatically calculates column widths and prints data using ASCII-style borders.
 
-* **Dinamik Tablo Oluşturma:** Verilen sütun isimlerine göre yeni tablolar tanımlayabilir.
-* **Veri İşlemleri:** Tablolara veri ekleme, güncelleme ve silme desteği sunar.
-* **Koşullu Sorgular:** Belirli kriterlere göre veri seçme ve sayma işlemlerini yapar.
-* **Tablo Birleştirme (Join):** İki farklı tabloyu ortak bir sütun üzerinden birleştirerek gösterir.
-* **Görsel Çıktı:** Tabloları ASCII karakterleri kullanarak düzgün bir kutu yapısında ekrana yazdırır.
-
-## Kullanım
-
-Programı çalıştırmak için komut satırından giriş dosyasını parametre olarak vermeniz yeterlidir:
-
+#### **Usage**
+Run the program from the command line by providing an input file as an argument:
 ```bash
 python main.py input.txt
 ```
 
-## Veri Yapısı
+#### **Data Structure**
+The project uses a dictionary (`data`) as its core, where table names serve as keys. Columns and elements are stored as nested lists and dictionaries. The `table_printer` function ensures the output is always aligned and professional.
 
-Projenin merkezinde, tablo isimlerini anahtar (key) olarak kullanan bir sözlük (`data`) yapısı bulunur. Tablo sütunları ve satırları bu sözlük içinde iç içe geçmiş listeler ve sözlükler şeklinde tutulur. `table_printer` fonksiyonu, bu veriyi otomatik olarak sütun genişliklerini hesaplayarak ekrana basar.
-
-## Desteklenen Komut Formatları
-
-* `CREATE_TABLE [Tablo_Adı] [Sütun1,Sütun2,...]`
-* `INSERT [Tablo_Adı] [Değer1,Değer2,...]`
-* `SELECT [Tablo_Adı] [Sütunlar/*] WHERE {Koşullar}`
-* `UPDATE [Tablo_Adı] {Yeni_Değerler} WHERE {Koşullar}`
-* `DELETE [Tablo_Adı] WHERE {Koşullar}`
-* `JOIN [Tablo1,Tablo2] WHERE [Ortak_Sütun]`
-* `COUNT [Tablo_Adı] WHERE {Koşullar}`
+#### **Supported Commands**
+* `CREATE_TABLE [Table_Name] [Col1,Col2,...]`
+* `INSERT [Table_Name] [Val1,Val2,...]`
+* `SELECT [Table_Name] [Columns/*] WHERE {Conditions}`
+* `UPDATE [Table_Name] {New_Values} WHERE {Conditions}`
+* `DELETE [Table_Name] WHERE {Conditions}`
+* `JOIN [Table1,Table2] WHERE [Common_Column]`
+* `COUNT [Table_Name] WHERE {Conditions}`
 
 ---
+
